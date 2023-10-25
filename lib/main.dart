@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
     'Produkt 2',
     'Produkt 3',
     'Produkt 4',
-    'Produkt5'
+    'Produkt 5'
   ];
 
   @override
