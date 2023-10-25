@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,9 +21,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class HomeScreen extends StatelessWidget {
-  final List<String> products = ['Produkt 1', 'Produkt 2', 'Produkt 3', 'Produkt 4', 'Produkt5'];
+  final List<String> products = [
+    'Produkt 1',
+    'Produkt 2',
+    'Produkt 3',
+    'Produkt 4',
+    'Produkt5'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +45,8 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/details',
-                arguments: products[index], // Produktnamen als Parameter übergeben
+                arguments:
+                    products[index], // Produktnamen als Parameter übergeben
               );
             },
           );
