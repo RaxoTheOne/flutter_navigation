@@ -22,13 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  final List<String> products = [
-    'Produkt 1',
-    'Produkt 2',
-    'Produkt 3',
-    'Produkt 4',
-    'Produkt 5'
-  ];
+  final List<String> products = ['Produkt 1', 'Produkt 2', 'Produkt 3'];
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +34,19 @@ class HomeScreen extends StatelessWidget {
         itemCount: products.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(products[index]),
+            contentPadding: const EdgeInsets.all(16), // Abstand um das ListTile
+            leading: const Icon(Icons.shopping_cart), // Icon vor dem Text
+            title: Text(products[index]), // Text des Produkts
+            tileColor: Colors.white, // Hintergrundfarbe des Listenelements
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10), // Abgerundete Ecken
+            ),
+            elevation: 4, // Schatten-Effekt
             onTap: () {
               Navigator.pushNamed(
                 context,
                 '/details',
-                arguments:
-                    products[index], // Produktnamen als Parameter übergeben
+                arguments: products[index],
               );
             },
           );
