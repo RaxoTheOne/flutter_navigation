@@ -33,22 +33,24 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: products.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            contentPadding: const EdgeInsets.all(16), // Abstand um das ListTile
-            leading: const Icon(Icons.shopping_cart), // Icon vor dem Text
-            title: Text(products[index]), // Text des Produkts
-            tileColor: Colors.white, // Hintergrundfarbe des Listenelements
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10), // Abgerundete Ecken
+          return Card(
+            elevation: 4, // Schatten-Effekt für das Card-Widget
+            margin: const EdgeInsets.all(16), // Abstand um das Card-Widget
+            child: ListTile(
+              leading: const Icon(Icons.shopping_cart), // Icon vor dem Text
+              title: Text(products[index]), // Text des Produkts
+              tileColor: Colors.white, // Hintergrundfarbe des Listenelements
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10), // Abgerundete Ecken
+              ),
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/details',
+                  arguments: products[index],
+                );
+              },
             ),
-            elevation: 4, // Schatten-Effekt
-            onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/details',
-                arguments: products[index],
-              );
-            },
           );
         },
       ),
