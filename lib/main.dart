@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  final List<String> products = ['Produkt 1', 'Produkt 2', 'Produkt 3', 'Produkt 4', 'Produkt 5'];
+  final List<String> products = [
+    'Produkt 1', 'Produkt 2', 'Produkt 3', 'Produkt 4', 'Produkt 5'
+    ];
 
   @override
   Widget build(BuildContext context) {
