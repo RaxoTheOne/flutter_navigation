@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
 
 class HomeScreen extends StatelessWidget {
-  final List<String> products = ['Produkt 1', 'Produkt 2', 'Produkt 3'];
+  final List<String> products = ['Produkt 1', 'Produkt 2', 'Produkt 3', 'Produkt 4', 'Produkt5'];
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +61,7 @@ class DetailsScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Ausgewähltes Produkt: $product'),
             ElevatedButton(
